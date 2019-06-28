@@ -65,7 +65,7 @@ public class FlowTest {
         TestScenarioSupport.clearAllDatabases();
     }
 
-    @After
+
     public void tearDown() {
         registrationServer.stop();
         allocationsServer.stop();
