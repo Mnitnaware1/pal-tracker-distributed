@@ -26,19 +26,19 @@ public class FlowTest {
     private ApplicationServer timesheetsServer = new ApplicationServer(workingDir + "/../applications/timesheets-server/build/libs/timesheets-server.jar", "8884");
 
     private String registrationServerUrl(String path) {
-        return "http://localhost:8883" + path;
+        return "http://localhost:8083" + path;
     }
 
     private String allocationsServerUrl(String path) {
-        return "http://localhost:8881" + path;
+        return "http://localhost:8085" + path;
     }
 
     private String backlogServerUrl(String path) {
-        return "http://localhost:8882" + path;
+        return "http://localhost:8082" + path;
     }
 
     private String timesheetsServerUrl(String path) {
-        return "http://localhost:8884" + path;
+        return "http://localhost:8084" + path;
     }
 
     private long findResponseId(Response response) {
@@ -61,7 +61,7 @@ public class FlowTest {
         allocationsServer.startWithDatabaseName("tracker_allocations_test");
         backlogServer.startWithDatabaseName("tracker_backlog_test");
         timesheetsServer.startWithDatabaseName("tracker_timesheets_test");
-        ApplicationServer.waitOnPorts("8881", "8882", "8883", "8884");
+        ApplicationServer.waitOnPorts("8085", "8082", "8083", "8084");
         TestScenarioSupport.clearAllDatabases();
     }
 
